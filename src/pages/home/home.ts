@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import { MapsProvider } from '../../providers/maps/maps';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  geoposition: any;
+  constructor( public navCtrl: NavController, private maps: MapsProvider) {
+    
+  } 
 
-  constructor(public navCtrl: NavController) {
-
+  ionViewDidLoad(){
   }
+
 
 }
