@@ -1,8 +1,10 @@
 import { Component, ViewChild} from '@angular/core';
 import { MapsProvider } from '../../providers/maps/maps';
+import { NavController, Platform } from 'ionic-angular';
 declare var google: any;
 import { Geolocation } from '@ionic-native/geolocation';
 import firebase from 'firebase';
+import { MoreInfoPage } from '../../pages/more-info/more-info';
 @Component({
   selector: 'google-map',
   templateUrl: 'google-map.html'
@@ -16,7 +18,7 @@ export class GoogleMapComponent {
   map: any;
 
   coordinateObj: any;
-  constructor(private maps: MapsProvider) { 
+  constructor(private maps: MapsProvider,public navCtrl: NavController) { 
     console.log(this.coordinateObj);
   }
 
@@ -46,7 +48,11 @@ export class GoogleMapComponent {
        let  obj = {
           name: infor[k].name,
           lat: infor[k].lat,
-          lng: infor[k].lng
+          lng: infor[k].lng,
+          email:infor[k].email,
+          phone:infor[k].phone,
+          owner:infor[k].owner,
+          tel:infor[k].tel
           }
 
        
@@ -71,16 +77,16 @@ export class GoogleMapComponent {
 
 
         marker.addListener('click', () =>{
-            console.log(this.arry);
-            console.log("lat:-26.2651693, lng:27.97542109999995");
+           
             infowindow.open(this.map, marker);
-      // this.navCtrl.push(InformationPage, {obj:obj});
+      this.navCtrl.push(MoreInfoPage, {obj:obj});
       
     });
 }
  
 })
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
+  
+this.map = new google.maps.Map(this.mapElement.nativeElement,mapOptions)
     
       let marker: google.maps.Marker = new google.maps.Marker({
         map: this.map,label:"my location",

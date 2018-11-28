@@ -20,4 +20,8 @@ export class MapsProvider {
     }
   }
 
+  retrieveMap(mapElement,mapOptions){
+    return new google.maps.Map(mapElement.nativeElement, mapOptions);
+  }
+
 }
