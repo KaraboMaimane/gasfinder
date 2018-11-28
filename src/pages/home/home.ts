@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { MapsProvider } from '../../providers/maps/maps';
+import { MoreInfoPage } from '../more-info/more-info';
 
 @Component({
   selector: 'page-home',
@@ -15,5 +16,7 @@ export class HomePage {
   ionViewDidLoad(){
   }
 
-
+  MoreInfo=function(){
+    this.navCtrl.push(MoreInfoPage)
+  }
 }

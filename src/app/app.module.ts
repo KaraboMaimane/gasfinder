@@ -11,11 +11,12 @@ import {Geolocation} from '@ionic-native/geolocation'
 import { GoogleMapComponent } from '../components/google-map/google-map';
 import { MapsProvider } from '../providers/maps/maps';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MoreInfoPage } from '../pages/more-info/more-info';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    MoreInfoPage,
     GoogleMapComponent
   ],
   imports: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MoreInfoPage
   ],
   providers: [
     StatusBar,

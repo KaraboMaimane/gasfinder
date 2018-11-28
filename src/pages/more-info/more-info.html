@@ -1,0 +1,71 @@
+<ion-header>
+
+ <div class="map">
+    <google-map></google-map>
+ </div>
+
+</ion-header>
+
+
+<ion-content class="style">
+  <ion-segment [(ngModel)]="more" color="primary">
+    <ion-segment-button value="info">Info</ion-segment-button>
+    
+    <ion-segment-button value="photos">Photos</ion-segment-button>
+     
+    <ion-segment-button value="products">Products</ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="more">
+    <ion-list *ngSwitchCase="'info'" padding>
+     
+       <ion-label><b>Business Name:</b> Thandabantu Supermarket</ion-label> 
+       <ion-label><b>Business Address:</b> <br>
+        <ion-icon name="md-pin"></ion-icon> 94 Criscent Street <br>
+         Diepkloof Zone 2 <br>
+        SOWETO, JHB <br>
+        1863
+       </ion-label>
+
+       <ion-label><b>Business Contacts: </b><br>
+        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon> (011) 941 1234 <br>
+        <ion-icon name="md-phone-portrait"></ion-icon> 081 974 5766 <br>
+        <ion-icon name="mail"></ion-icon> business@gmail.com
+       </ion-label>
+       <ion-label><b>Business Owner:</b> Thandabantu Shandu </ion-label>
+     
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'photos'" padding>
+      <ion-grid>
+       
+        <ion-row>
+          <ion-col class="img1"> 
+         <img src="../../assets/imgs/bantu.jpg">
+         </ion-col>
+        
+          <ion-col class="img2">
+         <img src="../../assets/imgs/thanda.jpg">
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+      
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'products'" padding>
+      <ion-label><b>Petrol:</b></ion-label>
+<p>Petrol 95 : R17.08 per litre</p>
+<p>Petrol 93 : R16.85 per litre</p>
+
+<ion-label><b>Diesel:</b></ion-label>
+<p>Diesel 0.05% : R15.65</p>
+<p>Diesel 0.005% : R15.69</p>
+
+<ion-label><b>Gas:</b></ion-label>
+<p>9kg LP Gas Refill : R242.00</p>
+<p>19kg LP Gas Refill : R511.00</p>
+<p>48kg LP Gas Refill : R1293.00</p>
+    </ion-list>
+  </div>
+</ion-content>

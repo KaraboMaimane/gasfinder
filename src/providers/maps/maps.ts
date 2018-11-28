@@ -2,12 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation, GeolocationOptions, Geoposition } from '@ionic-native/geolocation';
 import { Platform } from 'ionic-angular';
-/*
-  Generated class for the MapsProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class MapsProvider {
   geoposition: Geoposition;
