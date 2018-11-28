@@ -7,7 +7,7 @@ import { MapsProvider } from '../../providers/maps/maps';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  geoposition: any;
+
   constructor( public navCtrl: NavController, private maps: MapsProvider) {
     
   } 
