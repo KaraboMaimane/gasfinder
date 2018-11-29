@@ -5,7 +5,7 @@ declare var google: any;
 import { Geolocation } from '@ionic-native/geolocation';
 import { signUp} from '../../app/GeoArray';
 import geoArr from '../../app/GlobalGeo';
-import *as firebase from 'firebase'; 
+import *as firebase from 'firebase/app'; 
 import { MoreInfoPage } from '../../pages/more-info/more-info';
 @Component({
   selector: 'google-map',
@@ -31,7 +31,6 @@ export class GoogleMapComponent {
     this.maps.getGeolocation().then((data)=>{
       this.initMap(data); 
     })
-    
   }
 
   // ionViewDidLoad(){
