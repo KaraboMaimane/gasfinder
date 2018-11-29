@@ -1,5 +1,9 @@
 <ion-header>
-
+  <ion-buttons end>
+    <button ion-button icon-only (click)="dismiss()">
+      <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
  <div id="map" #map>
    <!-- <google-map></google-map> -->
  </div>
@@ -8,6 +12,9 @@
 
 
 <ion-content class="style">
+
+  <div class="steg">
+
   <ion-segment [(ngModel)]="more" color="primary">
     <ion-segment-button value="info">Info</ion-segment-button>
     
@@ -15,16 +22,15 @@
      
     <ion-segment-button value="products">Products</ion-segment-button>
   </ion-segment>
-
+</div>
   <div [ngSwitch]="more">
     <ion-list *ngSwitchCase="'info'" padding>
      
        <ion-label><b>Business Name:</b>{{businessName}}</ion-label> 
        <ion-label><b>Business Address:</b> <br>
-        <ion-icon name="md-pin"></ion-icon> 94 Criscent Street <br>
-         Diepkloof Zone 2 <br>
-        SOWETO, JHB <br>
-        1863
+        <ion-icon name="md-pin"></ion-icon>{{streetName2}} <br>
+        {{areaLocation2}} <br>
+        {{postCode2}}
        </ion-label>
 
        <ion-label><b>Business Contacts: </b><br>
@@ -68,4 +74,6 @@
 <p>48kg LP Gas Refill : R1293.00</p>
     </ion-list>
   </div>
+
+  
 </ion-content>
