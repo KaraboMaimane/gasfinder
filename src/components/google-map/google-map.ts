@@ -38,7 +38,7 @@ export class GoogleMapComponent {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     //r
-    firebase.database().ref('users/').on('value', data=>{
+    firebase.database().ref('userdb/').on('value', data=>{
       let infor = data.val();
       let arry=[]
       let keys = Object.keys(infor);
@@ -52,7 +52,11 @@ export class GoogleMapComponent {
           email:infor[k].email,
           phone:infor[k].phone,
           owner:infor[k].owner,
-          tel:infor[k].tel
+          tel:infor[k].tel,
+          gas:infor[k].gas,
+          petrol93:infor[k].petrol93,
+          petrol95:infor[k].petrol95
+
           }
 
        
