@@ -1,9 +1,14 @@
 <ion-header>
 
+<<<<<<< HEAD
  <div class="map">
    
     <google-map></google-map>
 
+=======
+ <div id="map" #map>
+   <!-- <google-map></google-map> -->
+>>>>>>> cb0477f5e7de064bb47d5cbd30f84ee4f7347d20
  </div>
 
 </ion-header>
@@ -24,7 +29,7 @@
   <div [ngSwitch]="more">
     <ion-list *ngSwitchCase="'info'" padding>
      
-       <ion-label><b>Business Name:</b> Thandabantu Supermarket</ion-label> 
+       <ion-label><b>Business Name:</b>{{businessName}}</ion-label> 
        <ion-label><b>Business Address:</b> <br>
         <ion-icon name="md-pin"></ion-icon> 94 Criscent Street <br>
          Diepkloof Zone 2 <br>
@@ -33,11 +38,11 @@
        </ion-label>
 
        <ion-label><b>Business Contacts: </b><br>
-        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon> (011) 941 1234 <br>
-        <ion-icon name="md-phone-portrait"></ion-icon> 081 974 5766 <br>
-        <ion-icon name="mail"></ion-icon> business@gmail.com
+        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon>{{businessTel}}<br>
+        <ion-icon name="md-phone-portrait"></ion-icon> {{businessPhone}} <br>
+        <ion-icon name="mail"></ion-icon> {{businessEmail}}
        </ion-label>
-       <ion-label><b>Business Owner:</b> Thandabantu Shandu </ion-label>
+       <ion-label><b>Business Owner:</b> {{businessOwner}}</ion-label>
      
     </ion-list>
   

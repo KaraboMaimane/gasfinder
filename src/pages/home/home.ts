@@ -8,7 +8,7 @@ import { MoreInfoPage } from '../more-info/more-info';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  geoposition: any;
+
   constructor( public navCtrl: NavController, private maps: MapsProvider) {
     
   } 

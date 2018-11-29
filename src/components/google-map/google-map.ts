@@ -1,17 +1,24 @@
 import { Component, ViewChild} from '@angular/core';
 import { MapsProvider } from '../../providers/maps/maps';
+import { NavController, Platform } from 'ionic-angular';
 declare var google: any;
+import { Geolocation } from '@ionic-native/geolocation';
+import firebase from 'firebase';
+import { MoreInfoPage } from '../../pages/more-info/more-info';
 @Component({
   selector: 'google-map',
   templateUrl: 'google-map.html'
 })
 export class GoogleMapComponent {
+  arry=[];
+  pos={};
+  address;
 
   @ViewChild("map") mapElement;
   map: any;
 
   coordinateObj: any;
-  constructor(private maps: MapsProvider) { 
+  constructor(private maps: MapsProvider,public navCtrl: NavController) { 
     console.log(this.coordinateObj);
   }
 
@@ -27,17 +34,70 @@ export class GoogleMapComponent {
     let coords = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
     let mapOptions: google.maps.MapOptions = {
       center: coords,
-      zoom: 11,
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+    //r
+    firebase.database().ref('users/').on('value', data=>{
+      let infor = data.val();
+      let arry=[]
+      let keys = Object.keys(infor);
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
-    for(let i = 0; i < 10; i++){
+     for (var i = 0; i < keys.length; i++) {
+       var k = keys[i];
+       let  obj = {
+          name: infor[k].name,
+          lat: infor[k].lat,
+          lng: infor[k].lng,
+          email:infor[k].email,
+          phone:infor[k].phone,
+          owner:infor[k].owner,
+          tel:infor[k].tel
+          }
+
+       
+
+        this. arry.push(obj);
+
+        
+        // let markera: google.maps.Marker = new google.maps.Marker({
+        //   map: this.map,label:"bararararararar",
+        //   position: {lat:-26.2651693, lng:27.97542109999995}
+        // })
+
+       var marker = new google.maps.Marker({position:
+        {lat:this.arry[i].lat, lng:this.arry[i].lng}
+        ,map:this.map,
+        label:this.arry[i].name,},
+          );
+
+          var infowindow = new google.maps.InfoWindow({
+            content:obj.name
+              });
+
+
+        marker.addListener('click', () =>{
+           
+            infowindow.open(this.map, marker);
+      this.navCtrl.push(MoreInfoPage, {obj:obj});
+      
+    });
+}
+ 
+})
+  
+this.map = new google.maps.Map(this.mapElement.nativeElement,mapOptions)
+    
       let marker: google.maps.Marker = new google.maps.Marker({
-        map: this.map,
-        position: coords
+        map: this.map,label:"my location",
+        position: coords,
+        animation: google.maps.Animation.BOUNCE,
+        icon: {
+          url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}
+     
       })
-    }
+
+      
 
   }
 
