@@ -12,6 +12,9 @@
 
 
 <ion-content class="style">
+
+  <div class="steg">
+
   <ion-segment [(ngModel)]="more" color="primary">
     <ion-segment-button value="info">Info</ion-segment-button>
     
@@ -19,7 +22,7 @@
      
     <ion-segment-button value="products">Products</ion-segment-button>
   </ion-segment>
-
+</div>
   <div [ngSwitch]="more">
     <ion-list *ngSwitchCase="'info'" padding>
      
@@ -71,4 +74,6 @@
 <p>48kg LP Gas Refill : R1293.00</p>
     </ion-list>
   </div>
+
+  
 </ion-content>
