@@ -20,7 +20,7 @@ export class GoogleMapComponent {
 
   @ViewChild("map") mapElement;
   map: any;
-
+  
   coordinateObj: any;
   constructor(public loadingCtrl: LoadingController,private maps: MapsProvider,public navCtrl: NavController) { 
     console.log(this.coordinateObj);

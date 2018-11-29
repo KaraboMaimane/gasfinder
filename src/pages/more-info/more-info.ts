@@ -33,6 +33,7 @@ export class MoreInfoPage {
 
   geoArr2 = []
   geoArr = this.geoArr2;
+  
   constructor(public loadingCtrl: LoadingController,public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams,private maps: MapsProvider) {
 
   }
@@ -75,7 +76,7 @@ export class MoreInfoPage {
    
     let mapOptions: google.maps.MapOptions = {
       center: {lat:123,lng:3453},
-      zoom: 15,
+      zoom: 20,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
    // this.map = new google.maps.Map(mapOptions);

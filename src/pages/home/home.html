@@ -1,12 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Gas Finder 
-    </ion-title>
-  </ion-navbar>
-  <button ion-button (click)="MoreInfo()"><ion-icon name="add"></ion-icon></button>
-</ion-header>
+    <ion-navbar color="primary">
+      <ion-title ALIGN="center">
+        GAS FINDER
+      </ion-title>
+      
+    </ion-navbar>
+   <ion-searchbar placeholder="Search" class="search">
 
-<ion-content>
-  <google-map></google-map>
-</ion-content>
+      </ion-searchbar>
+  </ion-header>
+  <ion-content>
+    <google-map></google-map>
+  </ion-content>

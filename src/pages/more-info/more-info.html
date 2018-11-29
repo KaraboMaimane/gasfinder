@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-buttons end>
+
+
+  <!-- <ion-buttons end>
     <button ion-button icon-only (click)="dismiss()">
       <ion-icon name="home"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
+  
  <div id="map" #map>
-   <!-- <google-map></google-map> -->
+    <google-map></google-map>
  </div>
 
 </ion-header>
@@ -15,30 +18,30 @@
 
   <div class="steg">
 
-  <ion-segment [(ngModel)]="more" color="primary">
-    <ion-segment-button value="info">Info</ion-segment-button>
+  <ion-segment [(ngModel)]="more" color="primary" class="segmt">
+    <ion-segment-button value="info"><b>INFO</b></ion-segment-button>
     
-    <ion-segment-button value="photos">Photos</ion-segment-button>
+    <ion-segment-button value="photos"><b>PHOTOS</b></ion-segment-button>
      
-    <ion-segment-button value="products">Products</ion-segment-button>
+    <ion-segment-button value="products"><b>PRODUCTS</b></ion-segment-button>
   </ion-segment>
 </div>
   <div [ngSwitch]="more">
     <ion-list *ngSwitchCase="'info'" padding>
      
-       <ion-label><b>Business Name:</b>{{businessName}}</ion-label> 
+       <ion-label><b>Business Name: </b>{{businessName}}</ion-label> 
        <ion-label><b>Business Address:</b> <br>
-        <ion-icon name="md-pin"></ion-icon>{{streetName2}} <br>
-        {{areaLocation2}} <br>
-        {{postCode2}}
+        <ion-icon name="md-pin"></ion-icon>&emsp;{{ streetName2}} <br>
+        &emsp;{{areaLocation2}} <br>
+        &emsp;{{postCode2}}
        </ion-label>
 
        <ion-label><b>Business Contacts: </b><br>
-        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon>{{businessTel}}<br>
-        <ion-icon name="md-phone-portrait"></ion-icon> {{businessPhone}} <br>
-        <ion-icon name="mail"></ion-icon> {{businessEmail}}
+        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon>&emsp;{{businessTel}}<br>
+        <ion-icon name="md-phone-portrait"></ion-icon>&emsp;{{businessPhone}} <br>
+        <ion-icon name="mail"></ion-icon>&emsp;{{businessEmail}}
        </ion-label>
-       <ion-label><b>Business Owner:</b> {{businessOwner}}</ion-label>
+       <ion-label><b>Business Owner: </b> {{businessOwner}}</ion-label>
      
     </ion-list>
   
