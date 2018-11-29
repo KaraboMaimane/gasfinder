@@ -1,5 +1,9 @@
 <ion-header>
-
+  <ion-buttons end>
+    <button ion-button icon-only (click)="dismiss()">
+      <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
  <div id="map" #map>
    <!-- <google-map></google-map> -->
  </div>
@@ -21,10 +25,9 @@
      
        <ion-label><b>Business Name:</b>{{businessName}}</ion-label> 
        <ion-label><b>Business Address:</b> <br>
-        <ion-icon name="md-pin"></ion-icon> 94 Criscent Street <br>
-         Diepkloof Zone 2 <br>
-        SOWETO, JHB <br>
-        1863
+        <ion-icon name="md-pin"></ion-icon>{{streetName2}} <br>
+        {{areaLocation2}} <br>
+        {{postCode2}}
        </ion-label>
 
        <ion-label><b>Business Contacts: </b><br>

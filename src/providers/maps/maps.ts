@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation, GeolocationOptions, Geoposition } from '@ionic-native/geolocation';
 import { Platform } from 'ionic-angular';
+declare var google;
 
 @Injectable()
 export class MapsProvider {
@@ -24,4 +25,5 @@ export class MapsProvider {
     return new google.maps.Map(mapElement.nativeElement, mapOptions);
   }
 
+  
 }
