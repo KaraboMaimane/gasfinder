@@ -5,7 +5,7 @@ declare var google: any;
 import { Geolocation } from '@ionic-native/geolocation';
 import { signUp} from '../../app/GeoArray';
 import geoArr from '../../app/GlobalGeo';
-import firebase from 'firebase';
+import *as firebase from 'firebase'; 
 import { MoreInfoPage } from '../../pages/more-info/more-info';
 @Component({
   selector: 'google-map',
