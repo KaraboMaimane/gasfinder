@@ -2,4 +2,46 @@ page-home {
     .search{
         background-color:rgb(41, 96, 160);
     }
+
+    .listflex{
+        background: rgba(white, .9);
+        border-radius: .5rem;
+        display: flex;
+        flex-flow: column;
+        padding: .2rem;
+        box-shadow: 2px 3px 5px rgba(black, .5);
+        width: 6rem;
+        position: fixed;
+        top: 10rem;
+        animation: .3s ease all;
+        right: 0;
+        opacity: 1;
+        animation-direction: reverse;
+        animation: slide .5s ease;
+        height: 60%;
+        flex: 0 0 auto;
+        .one{
+            // background: red;
+            flex: 1 0 0;
+        }
+        .two{
+            // background: blue;
+            flex: 1 0 0;
+        }
+        .three{
+            // background: green;
+            flex: 1 0 0;
+        }
+        .four{
+            // background: green;
+            flex: 1 0 0;
+        }
+        .five{
+            opacity: 0;
+            flex: 0 1 0;
+        }
+        .six{
+            flex: 1 0 0;
+        }
+    }
 }

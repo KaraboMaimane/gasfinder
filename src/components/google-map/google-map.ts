@@ -45,7 +45,8 @@ export class GoogleMapComponent {
     let mapOptions: google.maps.MapOptions = {
       center: coords,
       zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
     }
     //r
     firebase.database().ref('userdb/').on('value', data=>{
@@ -56,7 +57,7 @@ export class GoogleMapComponent {
 
      for (var i = 0; i < keys.length; i++) {
        var k = keys[i];
-       let  obj = {
+       let  obj = { 
           name: infor[k].name,
           lat: infor[k].lat,
           lng: infor[k].lng,
@@ -130,7 +131,7 @@ export class GoogleMapComponent {
             },500)
             
           })
-        });
+        }); 
       }
  
 })    
@@ -146,8 +147,6 @@ this.map = new google.maps.Map(this.mapElement.nativeElement,mapOptions)
           url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}
      
       })
-
-
   }
 
-}
+} 

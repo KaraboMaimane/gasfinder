@@ -1,82 +1,81 @@
-<ion-header>
-
-
-  <!-- <ion-buttons end>
-    <button ion-button icon-only (click)="dismiss()">
-      <ion-icon name="home"></ion-icon>
-      </button>
-    </ion-buttons> -->
-  
- <div id="map" #map>
+<div class="content">
+  <div id="map" #map>
     <google-map></google-map>
- </div>
-
-</ion-header>
-
-
-<ion-content class="style">
-
+  </div>
   <div class="steg">
 
-  <ion-segment [(ngModel)]="more" color="primary" class="segmt">
-    <ion-segment-button value="info"><b>INFO</b></ion-segment-button>
-    
-    <ion-segment-button value="photos"><b>PHOTOS</b></ion-segment-button>
-     
-    <ion-segment-button value="products"><b>PRODUCTS</b></ion-segment-button>
-  </ion-segment>
-</div>
+    <ion-segment [(ngModel)]="more" color="primary" class="segmt">
+      <ion-segment-button value="info"><b>INFO</b></ion-segment-button>
+
+      <ion-segment-button value="photos"><b>PHOTOS</b></ion-segment-button>
+
+      <ion-segment-button value="products"><b>PRODUCTS</b></ion-segment-button>
+    </ion-segment>
+  </div>
   <div [ngSwitch]="more">
     <ion-list *ngSwitchCase="'info'" padding>
-     
-       <ion-label><b>Business Name: </b>{{businessName}}</ion-label> 
-       <ion-label><b>Business Address:</b> <br>
-        <ion-icon name="md-pin"></ion-icon>&emsp;{{ streetName2}} <br>
-        &emsp;{{areaLocation2}} <br>
-        &emsp;{{postCode2}}
-       </ion-label>
+      <div class="info">
+        <label for="" class="label">
+          <ion-icon name="call"></ion-icon><span class="text">Mjojos Gamedes
+            Logistics</span>
+        </label>
+        <label for="" class="label"><i class="fas fa-building"></i><span
+            class="text">678b Matshaya Road</span></label>
+        <label for="" class="label">
+          <ion-icon name="call"></ion-icon><span class="text">(011)-934
+            1236</span>
+        </label>
+        <label for="" class="label">
+          <ion-icon name="mail"></ion-icon><span class="text">mjojs@gmail.com</span>
+        </label>
+      </div>
 
-       <ion-label><b>Business Contacts: </b><br>
-        <ion-icon><img src="../../assets/imgs/tel.png" class="tel"></ion-icon>&emsp;{{businessTel}}<br>
-        <ion-icon name="md-phone-portrait"></ion-icon>&emsp;{{businessPhone}} <br>
-        <ion-icon name="mail"></ion-icon>&emsp;{{businessEmail}}
-       </ion-label>
-       <ion-label><b>Business Owner: </b> {{businessOwner}}</ion-label>
-     
     </ion-list>
-  
-    <ion-list *ngSwitchCase="'photos'" padding>
-      <ion-grid>
-       
-        <ion-row>
-          <ion-col class="img1"> 
-         <img src="../../assets/imgs/bantu.jpg">
-         </ion-col>
-        
-          <ion-col class="img2">
-         <img src="../../assets/imgs/thanda.jpg">
-          </ion-col>
-        </ion-row>
-        
-      </ion-grid>
-      
+
+    <ion-list *ngSwitchCase="'photos'">
+      <div class="gallery">
+        <div class="galleryflex">
+          <div class="galleryflex__galleryItem">
+            <img src="../../assets/imgs/bantu.jpg" class="galleryflex__galleryItem--image">
+          </div>
+          <div class="galleryflex__galleryItem">
+            <img src="../../assets/imgs/thanda.jpg" class="galleryflex__galleryItem--image">
+          </div>
+          <div class="galleryflex__galleryItem">
+            <img src="https://cdn.24.co.za/files/Cms/General/d/3795/8294de818a8b419eb03e7578b877962c.jpg" class="galleryflex__galleryItem--image">
+          </div>
+          <div class="galleryflex__galleryItem">
+            <img src="https://lh3.googleusercontent.com/B8GXkvZEfgP99C4IRqGjLsdwpfQNyUPMdIJF2-W12ZvFt9Yg4zW05_snxMzsLjgAIoobB0MG3niK8d4A6p6R6Q=s1200"
+              class="galleryflex__galleryItem--image">
+          </div>
+          <div class="galleryflex__galleryItem">
+            <img src="../../assets/imgs/bantu.jpg" class="galleryflex__galleryItem--image">
+          </div>
+        </div>
+        <div class="block">&nbsp;</div>
+      </div>
+
     </ion-list>
 
     <ion-list *ngSwitchCase="'products'" padding>
-      <ion-label><b>Petrol:</b></ion-label>
-<p>Petrol 95 : R17.08 per litre</p>
-<p>Petrol 93 : R16.85 per litre</p>
-
-<ion-label><b>Diesel:</b></ion-label>
-<p>Diesel 0.05% : R15.65</p>
-<p>Diesel 0.005% : R15.69</p>
-
-<ion-label><b>Gas:</b></ion-label>
-<p>9kg LP Gas Refill : R242.00</p>
-<p>19kg LP Gas Refill : R511.00</p>
-<p>48kg LP Gas Refill : R1293.00</p>
+      <div class="productsflex">
+        <div class="productsflex__product">
+          <ion-label><b>Petrol:</b></ion-label>
+          <p>Petrol 95 : R17.08 per litre</p>
+          <p>Petrol 93 : R16.85 per litre</p>
+        </div>
+        <div class="productsflex__product">
+          <ion-label><b>Diesel:</b></ion-label>
+          <p>Diesel 0.05% : R15.65</p>
+          <p>Diesel 0.005% : R15.69</p>
+        </div>
+        <div class="productsflex__product">
+          <ion-label><b>Gas:</b></ion-label>
+          <p>9kg LP Gas Refill : R242.00</p>
+          <p>19kg LP Gas Refill : R511.00</p>
+          <p>48kg LP Gas Refill : R1293.00</p>
+        </div>
+      </div>
     </ion-list>
   </div>
-
-  
-</ion-content>
+</div>

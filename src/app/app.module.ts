@@ -8,11 +8,13 @@ import { HomePage } from '../pages/home/home';
 
 
 import {Geolocation} from '@ionic-native/geolocation'
-
+ 
 import { GoogleMapComponent } from '../components/google-map/google-map';
 import { MapsProvider } from '../providers/maps/maps';
 import { HttpClientModule } from '@angular/common/http';
 import { MoreInfoPage } from '../pages/more-info/more-info';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,13 +25,14 @@ import { MoreInfoPage } from '../pages/more-info/more-info';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    MoreInfoPage
+    MoreInfoPage,
+    GoogleMapComponent
   ],
   providers: [
     StatusBar,
